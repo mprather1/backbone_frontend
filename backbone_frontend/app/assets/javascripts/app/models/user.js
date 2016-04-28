@@ -1,6 +1,8 @@
-var User = Backbone.Model.extend({
+var SingleUser = Backbone.Model.extend({
   defaults: {
-    name: 'Kill Bill'
-  }
-})
-var user = new User;
+    ID: "",
+    name: ""
+  },
+  idAttribute: "ID",
+  urlRoot: 'http://localhost:3000/users'
+});
