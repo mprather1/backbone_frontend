@@ -6,8 +6,10 @@ var UserView = Backbone.View.extend({
     console.log(this.model.toJSON());
   },
 
+  template: _.template( $('templates/index'))
   render: function() {
-
+    var userTemplate = this.template(this.model.toJSON());
+    this.$el.html(userTemplate);
+    return this;
   }
 });
-var userView = new UserView({ model: user });
